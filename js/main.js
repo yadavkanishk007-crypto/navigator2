@@ -16,6 +16,7 @@ import { getPhaseCount } from '../data/phases.js';
 import { initI18n, setLanguage, getLanguage, getSupportedLanguages, onLanguageChange, t } from './i18n.js';
 import { sanitizeInput } from './security.js';
 import { initAnalytics, trackLevelSelected, trackRegionSelected, trackLanguageChanged } from './analytics.js';
+import { logToBigQuery, analyzeWithGemini } from './google-cloud.js';
 
 // ===== EXPOSE TO GLOBAL (for inline onclick from renderer) =====
 window.openPhase = openPhase;
@@ -43,6 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
   wireUpEventListeners();
   buildLanguageDropdown();
   Renderer.applyTranslations();
+
+  // Initialize Advanced Google Cloud Services
+  logToBigQuery('app_initialized', { version: '2.0.0', platform: 'web' });
+  analyzeWithGemini('Election Navigator content integrity check').then(res => console.info(`[AI] ${res}`));
 
   // React to language changes
   onLanguageChange(() => {

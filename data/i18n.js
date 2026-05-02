@@ -1,7 +1,11 @@
 /**
- * Internationalization Data — All UI strings in multiple languages
- * Supported: English (en), Hindi (hi), Tamil (ta), Telugu (te), Bengali (bn)
+ * @file Translation Strings
+ * @module data/i18n
+ * @description Internationalization data containing localized strings for 5 languages.
+ * @author Kanishk Yadav
+ * @version 1.0.0
  */
+'use strict';
 export const TRANSLATIONS = Object.freeze({
   en: {
     meta: { name: "English", dir: "ltr" },

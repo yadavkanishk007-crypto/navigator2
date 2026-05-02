@@ -25,6 +25,7 @@ Election Navigator is a **production-grade, zero-dependency** web application th
 - ♿ **WCAG 2.1 AA Compliant** — Focus trapping, ARIA roles, skip navigation, forced-colors support
 - 📊 **GA4 Analytics** — Privacy-respecting with DNT support
 - 🔥 **Firebase Integration** — Authentication & Cloud Storage via Firebase SDK
+- ☁️ **Google Cloud** — BigQuery analytics & Gemini AI factual analysis
 - 📱 **PWA-Ready** — Service worker, manifest.json, offline-first caching
 - 🧪 **80+ Automated Tests** — 9 test suites covering all modules
 
@@ -55,7 +56,8 @@ election-navigator/
 │   ├── i18n.js             # Language manager — reactive, localStorage
 │   ├── analytics.js        # GA4 event tracking — privacy-first
 │   ├── gtag.js             # Externalized GA4 initialization (CSP-safe)
-│   └── firebase-init.js    # Firebase Auth & Storage initialization
+│   ├── firebase-init.js    # Firebase Auth & Storage initialization
+│   └── google-cloud.js     # BigQuery & Gemini AI integration module
 ├── data/
 │   ├── phases.js           # Election phase content (immutable)
 │   ├── quizzes.js          # Quiz questions with explanations (immutable)
@@ -114,6 +116,8 @@ graph LR
 | **Headers** | HSTS, X-Frame-Options, COEP, COOP, CORP, Permissions-Policy |
 | **Data Immutability** | `Object.freeze()` on all exported data structures |
 | **Analytics Privacy** | DNT respect, anonymized IP, no PII collection |
+| **Security Headers** | Permissions-Policy, X-Frame-Options, X-Content-Type-Options |
+| **CSP** | Strict policy with `object-src 'none'` and gstatic support |
 
 ---
 
@@ -194,6 +198,7 @@ Run the test suite by opening `/tests/index.html` in a browser:
 - **Hosting**: Google Cloud Run
 - **Analytics**: Google Analytics 4
 - **Auth & Storage**: Google Firebase (Authentication & Cloud Storage)
+- **AI/ML & Cloud**: Google Cloud (BigQuery & Gemini AI API)
 - **SEO**: JSON-LD, Open Graph, Twitter Cards, Sitemap, Robots.txt
 
 ---

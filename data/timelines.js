@@ -1,11 +1,11 @@
 /**
- * Timeline Data
- * 
- * To add a new region:
- * 1. Add a new key to REGION_TIMELINES (lowercase region name)
- * 2. Each entry needs: title, date, desc
- * 3. The app will automatically detect and display it
+ * @file Election Timelines
+ * @module data/timelines
+ * @description Region-specific election cycle timelines (US, India, UK) and general default.
+ * @author Kanishk Yadav
+ * @version 1.0.0
  */
+'use strict';
 
 export const DEFAULT_TIMELINE = [
   { title: "📋 Registration Period Opens", date: "Months before Election Day", desc: "Voter registration opens. Check eligibility requirements and register early to ensure your spot." },

@@ -28,6 +28,8 @@ const PRECACHE_ASSETS = [
   '/js/i18n.js',
   '/js/analytics.js',
   '/js/gtag.js',
+  '/js/firebase-init.js',
+  '/js/google-cloud.js',
   '/data/phases.js',
   '/data/quizzes.js',
   '/data/timelines.js',

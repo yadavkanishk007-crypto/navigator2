@@ -1,11 +1,11 @@
 /**
- * Quiz Questions Data
- * 
- * To add questions for a new phase:
- * 1. Add a new key matching the phase number
- * 2. Each question needs: q, options[], correct (0-indexed), explanation
- * 3. Minimum 2 questions recommended per phase
+ * @file Quiz Question Data
+ * @module data/quizzes
+ * @description Quiz questions, options, and educational explanations for each phase.
+ * @author Kanishk Yadav
+ * @version 1.0.0
  */
+'use strict';
 export const QUIZZES = Object.freeze({
   1: [
     {
