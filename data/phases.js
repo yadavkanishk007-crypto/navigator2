@@ -7,6 +7,8 @@
  * 3. Each section needs: heading, text, and optionally list[] and infoBox
  * 4. Add matching quiz questions in quizzes.js
  */
+'use strict';
+
 export const PHASES = Object.freeze({
   1: {
     title: "Registration & Eligibility",

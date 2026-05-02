@@ -26,7 +26,7 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker
       .register('/sw.js', { scope: '/' })
       .then((reg) => {
-        console.log('[SW] Registered:', reg.scope);
+        console.info('[SW] Registered:', reg.scope);
       })
       .catch((err) => {
         // Service worker registration failure is non-fatal
