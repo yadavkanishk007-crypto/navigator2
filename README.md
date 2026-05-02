@@ -24,6 +24,7 @@ Election Navigator is a **production-grade, zero-dependency** web application th
 - 🔒 **Security Hardened** — CSP, Trusted Types, SRI, input sanitization, XSS prevention
 - ♿ **WCAG 2.1 AA Compliant** — Focus trapping, ARIA roles, skip navigation, forced-colors support
 - 📊 **GA4 Analytics** — Privacy-respecting with DNT support
+- 🔥 **Firebase Integration** — Authentication & Cloud Storage via Firebase SDK
 - 📱 **PWA-Ready** — Service worker, manifest.json, offline-first caching
 - 🧪 **80+ Automated Tests** — 9 test suites covering all modules
 
@@ -53,7 +54,8 @@ election-navigator/
 │   ├── security.js         # Trusted Types, sanitization, escaping
 │   ├── i18n.js             # Language manager — reactive, localStorage
 │   ├── analytics.js        # GA4 event tracking — privacy-first
-│   └── gtag.js             # Externalized GA4 initialization (CSP-safe)
+│   ├── gtag.js             # Externalized GA4 initialization (CSP-safe)
+│   └── firebase-init.js    # Firebase Auth & Storage initialization
 ├── data/
 │   ├── phases.js           # Election phase content (immutable)
 │   ├── quizzes.js          # Quiz questions with explanations (immutable)
@@ -87,6 +89,8 @@ graph LR
     A --> E[quiz.js]
     A --> F[i18n.js]
     A --> G[analytics.js]
+    I[firebase-init.js] --> J[Firebase Auth]
+    I --> K[Firebase Storage]
     B -->|pub/sub| C
     E --> D
     E --> B
@@ -189,6 +193,7 @@ Run the test suite by opening `/tests/index.html` in a browser:
 - **CI/CD**: Google Cloud Build
 - **Hosting**: Google Cloud Run
 - **Analytics**: Google Analytics 4
+- **Auth & Storage**: Google Firebase (Authentication & Cloud Storage)
 - **SEO**: JSON-LD, Open Graph, Twitter Cards, Sitemap, Robots.txt
 
 ---
